@@ -29,7 +29,7 @@ def updateAccount(accountType, status):
 
 # Run tests
 checkAccountList()
-checkAccountStatus("ChildrensFund")
+#checkAccountStatus("ChildrensFund")
 addAccount("Savings", "Open")
-removeAccount("Savings")
-updateAccount("Current", "Closed")
+removeAccount("Business")
+#updateAccount("Current", "Closed")

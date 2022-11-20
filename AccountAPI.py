@@ -28,7 +28,7 @@ class Account(Resource):
             abort(404, message="Cannot find Account {}".format(accountType))
         return jsonify(accountType, accounts[accountType])
 
-    def post(self, accountType):
+    def put(self, accountType):
         args = account_parser.parse_args()
         values = list(args.values())
         # Abort execution if an account name that already exists is entered
