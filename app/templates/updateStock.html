@@ -1,0 +1,62 @@
+{% extends "base2.html" %}
+
+{% block content %}
+
+<div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+            <div class="card-body p-md-5 mx-md-4 card-text">
+
+                <div class="text-center">
+                    <p id="thick" href="/">Update a Stock Quantity</p>
+                </div>
+
+                <form method="POST" action="/addStock">
+                    <div class="field">
+                        <div class="control">
+                            <input id="input_text" name="profile" placeholder="Profile">
+                            {% for error in form.profile.errors %}
+                            <div class="alert alert-danger w-100" role="alert">
+                                [{{ error }}]
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <div class="field">
+                        <div class="control">
+                            <br>
+                            <input id="input_text" name="stock" placeholder="Stock">
+                            {% for error in form.stock.errors %}
+                            <div class="alert alert-danger w-100" role="alert">
+                                [{{ error }}]
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <div class="field">
+                        <div class="control">
+                            <br>
+                            <input id="input_text" name="quantity" placeholder="Quantity">
+                            {% for error in form.quantity.errors %}
+                            <div class="alert alert-danger w-100" role="alert">
+                                [{{ error }}]
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <div class="text-center">
+                        <br>
+                        <button class="button btn btn-info rounded-pill is-block is-info is-fullwidth">Submit</button>
+                    </div>
+
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

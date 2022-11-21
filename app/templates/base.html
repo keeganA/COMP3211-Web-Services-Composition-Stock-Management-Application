@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title> Finance Manager </title>
+
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/styles/style.css') }}" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600&display=swap" rel="stylesheet"
+        type="text/css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" id="thick" href="/">Finance Manager</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Right align navbar -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <form class="form-inline" action="/createAccount">
+                        <button class="btn btn-info rounded-pill" type="submit" value="Create Account">Create
+                            Account</button>
+                    </form>
+                </li>
+                <li class="nav-item px-2">
+                    <form class="form-inline" action="/removeAccount">
+                        <button class="btn btn-info rounded-pill" type="submit" value="Delete an Account">Delete an
+                            Account</button>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <form class="form-inline" action="/updateAccount">
+                        <button class="btn btn-info rounded-pill" type="submit" value="Update an Account">Update an
+                            Account</button>
+                    </form>
+                </li>
+                <li class="nav-item px-2">
+                    <form class="form-inline" action="/viewDetails">
+                        <button class="btn btn-info rounded-pill" type="submit" value="View Account Details">View
+                            Account Details</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero-body">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+
+<!-- Copyright -->
+<footer class="bg-light text-center text-lg-start">
+    <div class="text-center p-3 card-text">
+        © 2022 Copyright
+        <a class="text-dark card-text" href="">yourfinancemanager.com</a>
+    </div>
+</footer>
+
+</html>

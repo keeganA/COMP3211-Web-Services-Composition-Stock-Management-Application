@@ -50,6 +50,7 @@ class Account(Resource):
         # Abort execution if an account name that doesn't exist is entered
         if accountType not in accounts:
             abort(404, message="Cannot find Account {}".format(accountType))
+        print('values1', values[1])
         accounts[accountType] = values[1]
         return 'Account Successfully Updated!', 201
 
@@ -63,4 +64,4 @@ api.add_resource(Accounts, '/accounts', )
 api.add_resource(Account, '/accounts/<accountType>', endpoint='Account')
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run(debug=True, port=3020)

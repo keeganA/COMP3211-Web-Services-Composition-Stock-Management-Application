@@ -15,24 +15,12 @@ profiles={"Current":{"Meta":5, "Google":3, "Amazon":7},
         "Savings":{"Meta":3, "Google":1, "Amazon":9},
         "Business":{"Meta":5, "Google":3}}
 
-def abort_if_profile_id_doesnt_exsis(profile_id):
-    if profile_id not in profiles:
-        abort(404, "profile id is not valid/found ...")
-
-def abort_if_profile_id_exsis(profile_id):
-    if profile_id  in profiles:
-        abort(404, "profile id already exsist ...")
-
-
-
 #making a resource
 class profile(Resource):#inherits from Resource
     def get(self, profile_id):
-        abort_if_profile_id_doesnt_exsis(profile_id)
         return profiles[profile_id]
 
     def put(self, profile_id):
-        abort_if_profile_id_exsis(profile_id)
         args = profile_put_args.parse_args()
         #need only the values of the args which is dict type because of how I defined profiles
         pairOfValues = list(args.values())
@@ -40,14 +28,12 @@ class profile(Resource):#inherits from Resource
         return profiles[profile_id]
 
     def delete(self,profile_id):
-        abort_if_profile_id_doesnt_exsis(profile_id)
         arg = profile_delete_args.parse_args()
         value = list(arg.values())
         del profiles[profile_id][value[0]]
         return (value[0]+ " stock removed")
 
     def update(self,profile_id):
-        abort_if_profile_id_doesnt_exsis(profile_id)
         args = profile_put_args.parse_args()
         pairOfValues = list(args.values())
         profiles[profile_id][pairOfValues[0]] = pairOfValues[1]

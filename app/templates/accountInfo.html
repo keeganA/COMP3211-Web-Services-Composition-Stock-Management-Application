@@ -1,0 +1,27 @@
+{% extends "base2.html" %}
+
+{% block content %}
+
+
+<section class="h-100 gradient-form" style="background-color: #eee;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-12">
+                <div class="card rounded-3 text-black card-text">
+
+                    <div>
+                        <h4>View details about your {{profile}} account</h4>
+                        {% for i in range(profile_stocks|length) %}
+                        <div class="scooterContainer">
+                            <h5><strong>Stock: </strong>{{ profile_stocks[i] }}</h2>
+                                <h5><strong>Quantity: </strong>{{ profile_stock_quantities[i] }}</h2>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
