@@ -15,7 +15,6 @@ BASE = "http://127.0.0.1:"
 Web Service Functions
 
 """
-
 ## Set of functions for the first web service
 def AccountList():
     response = requests.get(BASE + "3020/accounts")
