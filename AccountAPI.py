@@ -58,7 +58,7 @@ class Accounts(Resource):
         return accounts
 
 # Register resources
-api.add_resource(Accounts, '/accounts', )
+api.add_resource(Accounts, '/accounts')
 api.add_resource(Account, '/accounts/<accountType>', endpoint='Account')
 
 if __name__ == "__main__":
