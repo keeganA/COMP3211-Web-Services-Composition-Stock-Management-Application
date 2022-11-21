@@ -25,7 +25,7 @@ def removeAccount(accountType):
 
 # Test that an account status can be updated
 def updateAccount(accountType, status):
-    response = requests.patch(BASE + "5000/accounts/" + accountType, json={"Account":accountType, "Status":status})
+    response = requests.put(BASE + "5000/accounts/" + accountType, json={"Account":accountType, "Status":status})
     #checkAccountList()
 
 
