@@ -32,8 +32,6 @@ class Account(Resource):
         args = account_parser.parse_args()
         values = list(args.values())
         # Abort execution if an account name that already exists is entered
-        if accountType in accounts:
-            abort(404, message="Account {} already exists".format(accountType))
         accounts[accountType] = values[1]
         return 'Account Successfully Added!', 201
     

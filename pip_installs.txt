@@ -1,6 +1,0 @@
-Flask
-Flask-WTF
-Flask-RESTful
-yfinance
-Jinja2
-WTForms

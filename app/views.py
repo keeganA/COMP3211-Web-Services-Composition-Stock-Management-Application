@@ -5,6 +5,7 @@ from .forms import *
 import os
 import requests, json
 import yfinance as yf
+from flask import Markup
 
 BASE = "http://127.0.0.1:"
 
@@ -100,8 +101,7 @@ def updateAccount():
     if request.method == 'POST':
         accountType = request.form.get('accountType')
         status = request.form.get('status')
-        removeAnAccount(accountType)
-        addAnAccount(accountType, status)
+        updateAnAccount(accountType, status)
         return redirect(url_for('viewAccounts'))
     return render_template('updateAccount.html', title='Update an Account', form=form)
 
@@ -120,7 +120,7 @@ def accountInfo():
     try:
         profile, profile_stocks, profile_stock_quantities = getInfoForAccount(account)
     except ValueError as e:
-        print('Oops this Account is Closed!')
+        flash(Markup('Oops this there is no profile information about this account! Click <a href="/addStock" class="alert-link">here</a> to add a stock to this profile'))
         return redirect(url_for('viewDetails'))
     
     return render_template('accountInfo.html', title='View More Details on an Account', profile=profile, 
