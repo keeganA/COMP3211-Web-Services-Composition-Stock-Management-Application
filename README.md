@@ -9,7 +9,7 @@ This project consists of three RESTFul Web Services - two OWN web services and o
 - [ ] testAccounts.py - The client for testing the first web service
 - [ ] testProfiles.py - The client for testing the second web service
 - [ ] client.py - The integrated **testing client** which can be run through a command line interface 
-- [ ] testAPI.py - The client for testing the external API web service
+- [ ] testExternal.py - The client for testing the external API web service
 
 - [ ] ./app - Directory containing files to deploy the integrated client as a Flask web service
 - [ ] config.py - Configuration of the Flask web service
@@ -57,7 +57,7 @@ python testProfiles.py
 
 To execute the External web services' client for testing use the following command:
 ```bash
-python testAPI.py
+python testExternal.py
 ```
 
 ***
